@@ -10,25 +10,29 @@ namespace MyArray
     {
         private int[] _array;
         private int _length;
-        
+
         public Array()
         {
             _length = 0;
             _array = new int[_length];
         }
+
         public void Print()
         {
             foreach (int element in _array)
             {
                 Console.Write(element + "\t");
             }
+
             Console.WriteLine();
         }
+
         public void Clear()
         {
             _length = 0;
             _array = new int[_length];
         }
+
         public void Add(int value)
         {
             _length++;
@@ -38,35 +42,42 @@ namespace MyArray
                 tmp[i] = _array[i];
             }
 
-            tmp[_length - 1] = value; 
+            tmp[_length - 1] = value;
             _array = tmp;
         }
+
         public bool RemoveAt(int index)
         {
             if (index >= _length || index < 0) return false;
             _length--;
             int[] tmp = new int[_length];
-            for (int i = 0;i < index; i++)
+            for (int i = 0; i < index; i++)
             {
                 tmp[i] = _array[i];
             }
+
             for (int i = index + 1; i < _array.Length; i++)
             {
                 tmp[i - 1] = _array[i];
             }
+
             _array = tmp;
             return true;
         }
-	public void Insert(int value, int index) 
-        {
-            int[] newArray = new int[array.Length + 1];
-            newArray[index] = value;
-            for (int i = 0; i < index; i++)
-                newArray[i] = array[i];
-            for(int i = index; i < array.Length; i++)
-                newArray[i + 1] = array[i];
 
-            array = newArray;
+        public bool Insert(int value, int index)
+        {
+            if (index >= _length || index < 0) return false;
+            _length++;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < index; i++)
+                tmp[i] = _array[i];
+            tmp[index] = value;
+            for (int i = index; i < _array.Length; i++)
+                tmp[i + 1] = _array[i];
+
+            _array = tmp;
+            return true;
         }
     }
 }
