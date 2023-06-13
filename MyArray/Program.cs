@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Array array = new();
+            Array<int> array = new();
             array.Add(1);
             array.Add(2);
             array.Add(3);

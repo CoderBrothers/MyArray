@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace MyArray
 {
-    internal class Array
+    internal class Array<T>
     {
-        private int[] _array;
+        private T[] _array;
         private int _length;
 
         public Array()
         {
             _length = 0;
-            _array = new int[_length];
+            _array = new T[_length];
         }
 
         public void Print()
         {
-            foreach (int element in _array)
+            foreach (T element in _array)
             {
                 Console.Write(element + "\t");
             }
@@ -30,13 +30,13 @@ namespace MyArray
         public void Clear()
         {
             _length = 0;
-            _array = new int[_length];
+            _array = new T[_length];
         }
 
-        public void Add(int value)
+        public void Add(T value)
         {
             _length++;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < _array.Length; i++)
             {
                 tmp[i] = _array[i];
@@ -50,7 +50,7 @@ namespace MyArray
         {
             if (index >= _length || index < 0) return false;
             _length--;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < index; i++)
             {
                 tmp[i] = _array[i];
@@ -68,7 +68,7 @@ namespace MyArray
         public void Remove()
         {
             _length--;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < _length; i++)
             {
                 tmp[i] = _array[i];
@@ -77,11 +77,11 @@ namespace MyArray
             _array = tmp;
         }
 
-        public bool Insert(int value, int index)
+        public bool Insert(T value, int index)
         {
             if (index >= _length || index < 0) return false;
             _length++;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < index; i++)
                 tmp[i] = _array[i];
             tmp[index] = value;
