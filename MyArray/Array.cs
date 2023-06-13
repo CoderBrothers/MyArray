@@ -65,6 +65,18 @@ namespace MyArray
             return true;
         }
 
+        public void Remove()
+        {
+            _length--;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < _length; i++)
+            {
+                tmp[i] = _array[i];
+            }
+
+            _array = tmp;
+        }
+
         public bool Insert(int value, int index)
         {
             if (index >= _length || index < 0) return false;

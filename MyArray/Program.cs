@@ -12,7 +12,8 @@
             array.Add(5);
             array.Print();
             //Console.WriteLine(array.RemoveAt(2));
-            Console.WriteLine(array.Insert(111, 2));
+            //Console.WriteLine(array.Insert(111, 2));
+            array.Remove();
             array.Print();
         }
     }
