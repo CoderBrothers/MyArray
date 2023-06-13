@@ -8,14 +8,17 @@ namespace MyArray
 {
     internal class Array
     {
-        private int[] array;
+        private int[] _array;
+        private int _length;
+        
         public Array()
         {
-            array = new int[0];
+            _length = 0;
+            _array = new int[_length];
         }
         public void Print()
         {
-            foreach (int element in array)
+            foreach (int element in _array)
             {
                 Console.Write(element + "\t");
             }
@@ -23,34 +26,36 @@ namespace MyArray
         }
         public void Clear()
         {
-            array = new int[0];
+            _length = 0;
+            _array = new int[_length];
         }
-        public void Add(ref int[] array, int value, int index)
+        public void Add(int value)
         {
-            int[] newArray = new int[array.Length + 1];
-            newArray[index] = value;
-            for (int i = 0; i < index; i++)
+            _length++;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < _array.Length; i++)
             {
-                newArray[i] = array[i];
+                tmp[i] = _array[i];
             }
-            for (int i = index; i < array.Length; i++)
-            {
-                newArray[i + 1] = array[i];
-            }
-            array = newArray;
+
+            tmp[_length - 1] = value; 
+            _array = tmp;
         }
-        public void Remove(ref int[] arrray, int index)
+        public bool RemoveAt(int index)
         {
-            int[]newArray = new int[arrray.Length - 1];
+            if (index >= _length || index < 0) return false;
+            _length--;
+            int[] tmp = new int[_length];
             for (int i = 0;i < index; i++)
             {
-                newArray[i] = arrray[i];
+                tmp[i] = _array[i];
             }
-            for (int i = index + 1; i < array.Length; i++)
+            for (int i = index + 1; i < _array.Length; i++)
             {
-                newArray[i - 1] = array[i];
+                tmp[i - 1] = _array[i];
             }
-            array = newArray;
+            _array = tmp;
+            return true;
         }
 	public void Insert(int value, int index) 
         {
