@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,12 @@ namespace MyArray
     internal class Array<T>
     {
         private T[] _array;
-        private int _length;
+        public int Length { get; set; }
 
         public Array()
         {
-            _length = 0;
-            _array = new T[_length];
+            Length = 0;
+            _array = new T[Length];
         }
 
         public void Print()
@@ -29,28 +30,28 @@ namespace MyArray
 
         public void Clear()
         {
-            _length = 0;
-            _array = new T[_length];
+            Length = 0;
+            _array = new T[Length];
         }
 
         public void Add(T value)
         {
-            _length++;
-            T[] tmp = new T[_length];
+            Length++;
+            T[] tmp = new T[Length];
             for (int i = 0; i < _array.Length; i++)
             {
                 tmp[i] = _array[i];
             }
 
-            tmp[_length - 1] = value;
+            tmp[Length - 1] = value;
             _array = tmp;
         }
 
         public bool RemoveAt(int index)
         {
-            if (index >= _length || index < 0) return false;
-            _length--;
-            T[] tmp = new T[_length];
+            if (index >= Length || index < 0) return false;
+            Length--;
+            T[] tmp = new T[Length];
             for (int i = 0; i < index; i++)
             {
                 tmp[i] = _array[i];
@@ -67,9 +68,9 @@ namespace MyArray
 
         public void Remove()
         {
-            _length--;
-            T[] tmp = new T[_length];
-            for (int i = 0; i < _length; i++)
+            Length--;
+            T[] tmp = new T[Length];
+            for (int i = 0; i < Length; i++)
             {
                 tmp[i] = _array[i];
             }
@@ -79,9 +80,9 @@ namespace MyArray
 
         public bool Insert(T value, int index)
         {
-            if (index >= _length || index < 0) return false;
-            _length++;
-            T[] tmp = new T[_length];
+            if (index >= Length || index < 0) return false;
+            Length++;
+            T[] tmp = new T[Length];
             for (int i = 0; i < index; i++)
                 tmp[i] = _array[i];
             tmp[index] = value;
@@ -90,6 +91,10 @@ namespace MyArray
 
             _array = tmp;
             return true;
+        }
+        public interface IEnumerable
+        {
+            IEnumerator GetEnumerator();
         }
     }
 }
