@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace MyArray
 {
-    internal class Array<T>
+    internal class Array<T> : IEnumerable<T>
     {
         private T[] _array;
-        public int Length { get; set; }
+        private int _length;
+        public int Length
+        {
+            get => _length;
+            private set { _length = value; } 
+        }
 
         public Array()
         {
@@ -66,7 +71,7 @@ namespace MyArray
             return true;
         }
 
-        public void Remove()
+        public void Pop()
         {
             Length--;
             T[] tmp = new T[Length];
@@ -92,9 +97,15 @@ namespace MyArray
             _array = tmp;
             return true;
         }
-        public interface IEnumerable
+
+        public IEnumerator<T> GetEnumerator()
         {
-            IEnumerator GetEnumerator();
+            return ((IEnumerable<T>)_array).GetEnumerator();
+        }
+
+        IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return _array.GetEnumerator();
         }
     }
 }

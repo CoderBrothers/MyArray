@@ -13,8 +13,12 @@
             array.Print();
             //Console.WriteLine(array.RemoveAt(2));
             //Console.WriteLine(array.Insert(111, 2));
-            array.Remove();
+            array.Pop();
             array.Print();
+            foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
