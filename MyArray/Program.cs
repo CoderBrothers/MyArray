@@ -1,4 +1,5 @@
-﻿namespace MyArray
+﻿using MyLib;
+namespace MyArray
 {
     internal class Program
     {
