@@ -98,6 +98,16 @@ namespace MyArray
             return true;
         }
 
+        public bool IsContains(T value)
+        {
+            foreach (T item in _array)
+            {
+                if (item.Equals(value)) return true;
+
+            }
+            return false;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)_array).GetEnumerator();
