@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyArray
+
+namespace Collections
 {
-    internal class Array<T> : IEnumerable<T>
+    public class Array<T> : IEnumerable<T>
     {
         private T[] _array;
         private int _length;
@@ -98,7 +99,7 @@ namespace MyArray
             return true;
         }
 
-        public bool IsContains(T value)
+        public bool Contains(T value)
         {
             foreach (T item in _array)
             {
@@ -108,6 +109,12 @@ namespace MyArray
             return false;
         }
 
+        //public  bool Distinct(T value)
+        //{
+           
+        //}
+
+       
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)_array).GetEnumerator();

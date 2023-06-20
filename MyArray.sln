@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyArray", "MyArray\MyArray.csproj", "{07D938AE-E2C3-4F08-82C6-0BA3D5EF3A33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLib", "MyLib\MyLib.csproj", "{30C633E6-475D-4B15-8BA8-9D0F4C7748DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "MyLib\Collections.csproj", "{30C633E6-475D-4B15-8BA8-9D0F4C7748DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
