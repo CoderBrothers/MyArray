@@ -109,12 +109,18 @@ namespace Collections
             return false;
         }
 
-        //public  bool Distinct(T value)
-        //{
-           
-        //}
+	    public bool Remove(T value)
+        {
+            int index = Array.IndexOf(_array, value);
+            if (index >= 0)
+            {
+                RemoveAt(index);
+                return true;
+            }
 
-       
+            return false;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)_array).GetEnumerator();

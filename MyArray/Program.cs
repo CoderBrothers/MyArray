@@ -1,4 +1,4 @@
-﻿using Collections;
+﻿using MyLib;
 namespace MyArray
 {
     internal class Program
@@ -7,13 +7,9 @@ namespace MyArray
         {
             Array<int> array = new();
             array.Add(1);
-            array.Add(3);
             array.Add(2);
             array.Add(3);
-            array.Add(3);
             array.Add(4);
-            array.Add(5);
-            array.Add(5);
             array.Add(5);
             array.Print();
             //Console.WriteLine(array.RemoveAt(2));
@@ -24,7 +20,6 @@ namespace MyArray
             {
                 Console.WriteLine(i);
             }
-            Console.WriteLine(array.Insert(0, 3));
         }
     }
 }
