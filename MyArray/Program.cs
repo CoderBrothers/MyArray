@@ -13,8 +13,10 @@ namespace MyArray
             array.Add(3);
             array.Add(4);
             array.Add(5);
+	    array.Add(5);
             array.Add(5);
-            array.Add(5);
+            array.Add(1);
+            array.Remove(1);
             array.Print();
             //Console.WriteLine(array.RemoveAt(2));
             //Console.WriteLine(array.Insert(111, 2));

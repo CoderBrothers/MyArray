@@ -109,7 +109,35 @@ namespace Collections
             return false;
         }
 
-        public IEnumerable<T> Distinct()
+	    public bool Remove(T value)
+        {
+            int index = IndexOf(value);
+            if (index >= 0)
+            {
+                RemoveAt(index);
+                return true;
+            }
+
+            return false;
+        }
+
+        public int IndexOf(T value)
+        {
+            if (!Contains(value))
+            {
+                return -1;
+            }
+            for (int i = 0; i < Length; i++)
+            {
+                if (_array[i].Equals(value))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        } 
+
+	public IEnumerable<T> Distinct()
         {
             for (int i = 0; i < _array.Length; i++)
             {
@@ -129,7 +157,6 @@ namespace Collections
                 }
             }
         }
-
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)_array).GetEnumerator();
