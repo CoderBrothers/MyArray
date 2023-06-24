@@ -32,7 +32,8 @@ namespace MyArray
             {
                 Console.Write(number + " ");
             }
-
+            Console.WriteLine();
+            Console.WriteLine(array[1]);
         }
     }
 }

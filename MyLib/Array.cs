@@ -17,6 +17,11 @@ namespace Collections
             get => _length;
             private set { _length = value; } 
         }
+        public T this[int index]
+        {
+            get => _array[index];
+            set => _array[index] = value;
+        }
 
         public Array()
         {
@@ -157,6 +162,9 @@ namespace Collections
                 }
             }
         }
+
+
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)_array).GetEnumerator();
