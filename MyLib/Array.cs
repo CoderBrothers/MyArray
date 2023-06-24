@@ -109,16 +109,25 @@ namespace Collections
             return false;
         }
 
-	    public bool Remove(T value)
+        public IEnumerable<T> Distinct()
         {
-            int index = Array.IndexOf(_array, value);
-            if (index >= 0)
+            for (int i = 0; i < _array.Length; i++)
             {
-                RemoveAt(index);
-                return true;
-            }
+                bool isUnique = true;
+                for (int j = i + 1; j < _array.Length; j++)
+                {
+                    if (Equals(_array[i], _array[j]))
+                    {
+                        isUnique = false;
+                        break;
+                    }
+                }
 
-            return false;
+                if (isUnique)
+                {
+                    yield return _array[i];
+                }
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
