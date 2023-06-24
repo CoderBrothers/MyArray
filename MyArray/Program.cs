@@ -13,7 +13,7 @@ namespace MyArray
             array.Add(3);
             array.Add(4);
             array.Add(5);
-	    array.Add(5);
+	        array.Add(5);
             array.Add(5);
             array.Add(1);
             array.Remove(1);
@@ -24,12 +24,13 @@ namespace MyArray
             array.Print();
             foreach (int i in array)
             {
-                Console.WriteLine(i);
+                Console.Write(i + " ");
             }
+            Console.WriteLine();
             Console.WriteLine(array.Insert(0, 3));
             foreach (int number in array.Distinct())
             {
-                Console.WriteLine(number);
+                Console.Write(number + " ");
             }
 
         }

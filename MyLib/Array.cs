@@ -137,7 +137,7 @@ namespace Collections
             return -1;
         } 
 
-	public IEnumerable<T> Distinct()
+	    public IEnumerable<T> Distinct()
         {
             for (int i = 0; i < _array.Length; i++)
             {
