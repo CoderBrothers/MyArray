@@ -29,16 +29,6 @@ namespace Collections
             _array = new T[Length];
         }
 
-        public void Print()
-        {
-            foreach (T element in _array)
-            {
-                Console.Write(element + "\t");
-            }
-
-            Console.WriteLine();
-        }
-
         public void Clear()
         {
             Length = 0;
@@ -114,24 +104,10 @@ namespace Collections
             return false;
         }
 
-	    public bool Remove(T value)
-        {
-            int index = IndexOf(value);
-            if (index >= 0)
-            {
-                RemoveAt(index);
-                return true;
-            }
-
-            return false;
-        }
+	    public bool Remove(T value) => RemoveAt(IndexOf(value));
 
         public int IndexOf(T value)
         {
-            if (!Contains(value))
-            {
-                return -1;
-            }
             for (int i = 0; i < Length; i++)
             {
                 if (_array[i].Equals(value))

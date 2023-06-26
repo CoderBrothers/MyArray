@@ -34,6 +34,7 @@ namespace MyArray
             }
             Console.WriteLine();
             Console.WriteLine(array[1]);
+	    Console.WriteLine(array[0]);
         }
     }
 }
