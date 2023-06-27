@@ -139,7 +139,7 @@ namespace Collections
             }
         }
 
-
+        public bool IsEmpty() => !(_array.Length > 0);
 
         public IEnumerator<T> GetEnumerator()
         {
