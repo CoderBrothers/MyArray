@@ -67,7 +67,7 @@ namespace Collections
             return true;
         }
 
-        public void Pop()
+        public T Pop()
         {
             Length--;
             T[] tmp = new T[Length];
@@ -75,8 +75,9 @@ namespace Collections
             {
                 tmp[i] = _array[i];
             }
-
+            T removed = _array[Length];
             _array = tmp;
+            return removed;
         }
 
         public bool Insert(T value, int index)
