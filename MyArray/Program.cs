@@ -9,6 +9,7 @@ namespace MyArray
         {
             Array<int> array = new();
             Collections.Stack<int> stack = new();
+            Collections.Dictionary<int, string> dictionary = new();
             array.Add(1);
             array.Add(3);
             array.Add(2);
@@ -42,6 +43,7 @@ namespace MyArray
             Console.WriteLine();
 
 
+
             stack.Push(1);
             stack.Push(2);
             Console.WriteLine(stack.Peek());
@@ -53,11 +55,27 @@ namespace MyArray
             Console.WriteLine(stack.IsEmpty());
             stack.Clear();
             Console.WriteLine(stack.IsEmpty());
+            Console.WriteLine();
             //foreach (int i in stack)
             //{
             //    Console.Write(i + " ");
             //}
             //Console.WriteLine(stack.Peek());
+
+
+
+            dictionary.Add(1, "Apple");
+            dictionary.Add(2, "Orange");
+            Console.WriteLine(dictionary[1]);
+            //dictionary.Clear();
+            Console.WriteLine();
+            //dictionary.Remove(1);
+            Console.WriteLine(dictionary.Count);
+            foreach(var i in dictionary)
+            {
+                Console.WriteLine(i.Key + " : " + i.Value);
+            }
+
 
 
 
@@ -76,6 +94,7 @@ namespace MyArray
             //}
             //Console.WriteLine();
             //Console.WriteLine(stack2.Peek());
+
         }
     }
 }
